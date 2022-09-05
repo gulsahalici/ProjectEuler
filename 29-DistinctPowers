@@ -1,0 +1,19 @@
+<?php
+
+function calculateDistinct ($min, $max) {
+	$numbers = array();
+
+	for ($i = $min; $i <= $max; $i++) {
+		for ($j = $min; $j <= $max; $j++) {
+			array_push($numbers, $i ** $j);
+		}
+	}
+
+	sort($numbers);
+
+	return count(array_unique($numbers));
+}
+
+echo calculateDistinct (2, 100);
+
+?>
